@@ -114,7 +114,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-10",
     readTime: "6 min",
     tag: "Engineering",
-    image: "/blog-greenafrica.png",
+    image: "/projects/greenafrica.png",
     body: [
       "African operating conditions are not edge cases — they are the baseline. Software that works here works everywhere.",
       "We build offline-first where reasonable, treat bandwidth as a budget, and measure performance on the devices our users actually carry.",
@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-02",
     readTime: "7 min",
     tag: "Academy",
-    image: "/blog-academy.png",
+    image: "/projects/healguard.png",
     body: [
       "Small cohorts outperform large classrooms when the goal is production capability, not credentials.",
       "Mentorship from practicing engineers matters more than any single framework or stack.",
@@ -144,7 +144,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-14",
     readTime: "5 min",
     tag: "Studio",
-    image: "/blog-ikibina.jpeg",
+    image: "/projects/agrilink.png",
     body: [
       "A case study forces clarity: the problem, the decisions, the outcomes, and the trade-offs.",
       "We capture metrics from week one so impact is measurable, not anecdotal.",
