@@ -9,6 +9,8 @@ export const viewport: Viewport = {
   themeColor: "#0f172a",
 };
 
+export const metadataBase = new URL("https://ishconnect.vercel.app");
+
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -26,8 +28,6 @@ const orgJsonLd = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ishconnect.vercel.app"), // ✅ MOVED HERE
-
   title: "IshConnect — Software Development & Tech Training in Rwanda",
   description:
     "IshConnect is Rwanda's leading software development and tech training company. Custom web apps, mobile apps, cybersecurity, cloud solutions, and IT training.",
