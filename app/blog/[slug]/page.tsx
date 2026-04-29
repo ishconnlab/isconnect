@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { blogPosts, getAllBlogPostSlugs } from "@/lib/content";
@@ -37,9 +38,10 @@ export async function generateMetadata(props: { params: Params }) {
       tags: [post.tag],
       images: [
         {
-          url: "/og-image.png",
+          url: post.image,
           width: 1200,
           height: 630,
+          alt: post.title,
         },
       ],
     },
@@ -47,7 +49,7 @@ export async function generateMetadata(props: { params: Params }) {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: ["/og-image.png"],
+      images: [post.image],
     },
   };
 }
@@ -65,6 +67,7 @@ export default async function BlogPostPage(props: { params: Params }) {
   const title = post.title;
   const excerpt = post.excerpt;
   const body = post.body;
+  const image = post.image;
 
   return (
     <main className="pt-28 pb-24">
@@ -84,6 +87,17 @@ export default async function BlogPostPage(props: { params: Params }) {
           {title}
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">{excerpt}</p>
+
+        <div className="mt-8 overflow-hidden rounded-xl border border-border">
+          <Image
+            src={image}
+            alt={title}
+            width={1200}
+            height={630}
+            className="w-full h-auto object-cover"
+            priority
+          />
+        </div>
 
         <article className="mt-10 space-y-5 text-base leading-relaxed text-foreground/85">
           {body.map((para, i) => (
