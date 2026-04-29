@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Clock, Users, Signal, ArrowRight } from "lucide-react";
 import { SectionHeader } from "./Section";

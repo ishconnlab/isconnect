@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { SectionHeader } from "./Section";
 import { caseStudies } from "@/lib/content";
 
@@ -59,14 +58,13 @@ export function Projects() {
               </div>
 
               <div className="mt-6 flex items-center border-t border-border pt-4">
-                <Link
-                  to="/case-study/$slug"
-                  params={{ slug: p.slug }}
+                <a
+                  href={`/case-study/${p.slug}`}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors group-hover:text-accent"
                 >
                   View Case Study
                   <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </article>
           ))}

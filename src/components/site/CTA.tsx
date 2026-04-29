@@ -1,6 +1,8 @@
-// import { useState } from "react";
-// import { ArrowRight, X } from "lucide-react";
-// import emailjs from "@emailjs/browser";
+"use client";
+
+import { useState } from "react";
+import { ArrowRight, X } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 // export function CTA() {
 //   const [open, setOpen] = useState(false);
@@ -197,10 +199,6 @@
 //     />
 //   );
 // }
-
-import { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
-import emailjs from "@emailjs/browser";
 
 export function CTA() {
   const [open, setOpen] = useState(false);

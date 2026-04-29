@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
@@ -30,7 +32,7 @@ export function Nav() {
       }`}
     >
       <div className="container-tight flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <span className="relative flex h-7 w-7 items-center justify-center rounded-md bg-primary">
             <span className="h-2 w-2 rounded-sm bg-accent" />
           </span>

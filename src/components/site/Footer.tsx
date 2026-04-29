@@ -1,5 +1,4 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 
 interface GroupLink {
   label: string;
@@ -115,23 +114,13 @@ export function Footer() {
                 <ul className="mt-4 space-y-3 text-sm">
                   {g.links.map((l) => (
                     <li key={l.label}>
-                      {l.internal ? (
-                        <Link
-                          to={l.href}
-                          className="block text-muted-foreground transition-colors hover:text-foreground"
-                          title={l.desc}
-                        >
-                          {l.label}
-                        </Link>
-                      ) : (
-                        <a
-                          href={l.href}
-                          className="block text-muted-foreground transition-colors hover:text-foreground"
-                          title={l.desc}
-                        >
-                          {l.label}
-                        </a>
-                      )}
+                      <a
+                        href={l.href}
+                        className="block text-muted-foreground transition-colors hover:text-foreground"
+                        title={l.desc}
+                      >
+                        {l.label}
+                      </a>
                     </li>
                   ))}
                 </ul>

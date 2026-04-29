@@ -1,30 +1,39 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Nav } from "@/components/site/Nav";
-import { Footer } from "@/components/site/Footer";
+import type { Metadata } from "next";
+import Link from "next/link";
 import { ChatbotLazy } from "@/components/site/ChatbotLazy";
+import { Footer } from "@/components/site/Footer";
+import { Nav } from "@/components/site/Nav";
 import { SectionHeader } from "@/components/site/Section";
 import { blogPosts } from "@/lib/content";
 
-export const Route = createFileRoute("/blog/")({
-  head: () => ({
-    meta: [
-      { title: "Blog — IshConnect" },
+export const metadata: Metadata = {
+  title: "Blog — IshConnect | Software Development & Tech Training Insights",
+  description: "Read articles on software engineering, infrastructure, cloud solutions, tech training, and digital transformation from the IshConnect team in Rwanda.",
+  alternates: {
+    canonical: "https://ishconnect.vercel.app/blog",
+  },
+  openGraph: {
+    title: "IshConnect Blog | Engineering & Tech Training Insights",
+    description: "Articles on software development, infrastructure, and tech education from IshConnect.",
+    type: "website",
+    url: "https://ishconnect.vercel.app/blog",
+    images: [
       {
-        name: "description",
-        content: "Notes on engineering, infrastructure, and education from the IshConnect team.",
+        url: "https://ishconnect.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
       },
-      { property: "og:title", content: "IshConnect Blog" },
-      {
-        property: "og:description",
-        content: "Engineering & Academy notes from IshConnect.",
-      },
-      { property: "og:type", content: "website" },
     ],
-  }),
-  component: BlogIndex,
-});
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IshConnect Blog",
+    description: "Software engineering, infrastructure, and tech training articles.",
+    images: ["https://ishconnect.vercel.app/og-image.png"],
+  },
+};
 
-function BlogIndex() {
+export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
@@ -40,8 +49,7 @@ function BlogIndex() {
             {blogPosts.map((p) => (
               <Link
                 key={p.slug}
-                to="/blog/$slug"
-                params={{ slug: p.slug }}
+                href={`/blog/${p.slug}`}
                 className="group flex flex-col rounded-xl border border-border bg-surface p-6 card-lift"
               >
                 <div className="flex items-center justify-between">

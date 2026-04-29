@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Specific rules
+Disallow: /.next/
+Disallow: /api/
+Disallow: /_vercel/
+
+# Sitemaps
+Sitemap: https://ishconnect.vercel.app/sitemap.xml
