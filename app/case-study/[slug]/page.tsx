@@ -37,7 +37,7 @@ export async function generateMetadata(props: { params: Params }) {
       url: canonicalUrl,
       images: [
         {
-          url: `/projects/${study.slug}.png`,
+          url: study.image,
           width: 1200,
           height: 630,
           alt: study.title,
@@ -48,7 +48,7 @@ export async function generateMetadata(props: { params: Params }) {
       card: "summary_large_image",
       title: study.title,
       description: study.tagline,
-      images: [`/projects/${study.slug}.png`],
+      images: [study.image],
     },
   };
 }
@@ -61,7 +61,6 @@ export default async function CaseStudyPage(props: { params: Params }) {
     notFound();
   }
 
-  const imageSrc = `/projects/${study.slug}.png`;
   const liveUrl = study.liveUrl;
 
   return (
@@ -85,7 +84,7 @@ export default async function CaseStudyPage(props: { params: Params }) {
 
         <div className="mt-10 overflow-hidden rounded-xl border border-border">
           <Image
-            src={imageSrc}
+            src={study.image}
             alt={study.title}
             width={1200}
             height={630}

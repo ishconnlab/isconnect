@@ -17,6 +17,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Next.js", "PostgreSQL", "D3", "AWS"],
     liveUrl: "https://greenafrica.example.com",
+    image: "/projects/greenafrica.png",
   },
   {
     slug: "logistics-command-center",
@@ -34,6 +35,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["React", "Node.js", "Mapbox", "Redis"],
     liveUrl: "https://logistics.example.com",
+    image: "/projects/logistics.png",
   },
   {
     slug: "foodieapp",
@@ -51,6 +53,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["React Native", "Supabase", "Stripe"],
     liveUrl: "https://foodieapp.example.com",
+    image: "/projects/foodieapp.png",
   },
   {
     slug: "ai-deepfake-detector",
@@ -68,6 +71,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Python", "PyTorch", "FastAPI"],
     liveUrl: "https://deepfake-ai.example.com",
+    image: "/projects/ai-deepfake.png",
   },
   {
     slug: "healguard-ai",
@@ -85,6 +89,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["TypeScript", "LangChain", "Postgres"],
     liveUrl: "https://healguard.example.com",
+    image: "/projects/healguard.png",
   },
   {
     slug: "agrilink-rwanda",
@@ -102,6 +107,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Next.js", "Prisma", "Twilio"],
     liveUrl: "https://agrilink.rw",
+    image: "/projects/agrilink.png",
   },
 ];
 
@@ -114,7 +120,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-10",
     readTime: "6 min",
     tag: "Engineering",
-    image: "/projects/greenafrica.png",
     body: [
       "African operating conditions are not edge cases — they are the baseline. Software that works here works everywhere.",
       "We build offline-first where reasonable, treat bandwidth as a budget, and measure performance on the devices our users actually carry.",
@@ -129,7 +134,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-02",
     readTime: "7 min",
     tag: "Academy",
-    image: "/projects/healguard.png",
     body: [
       "Small cohorts outperform large classrooms when the goal is production capability, not credentials.",
       "Mentorship from practicing engineers matters more than any single framework or stack.",
@@ -144,7 +148,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-14",
     readTime: "5 min",
     tag: "Studio",
-    image: "/projects/agrilink.png",
     body: [
       "A case study forces clarity: the problem, the decisions, the outcomes, and the trade-offs.",
       "We capture metrics from week one so impact is measurable, not anecdotal.",

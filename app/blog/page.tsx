@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/lib/content";
 
@@ -56,34 +55,24 @@ export default function BlogPage() {
             <Link
               key={p.slug}
               href={`/blog/${p.slug}`}
-              className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface card-lift"
+              className="group flex flex-col rounded-xl border border-border bg-surface p-6 card-lift"
             >
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
-                <Image
-                  src={p.image}
-                  alt={p.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                  {p.tag}
+                </span>
+                <span className="text-xs text-muted-foreground">{p.readTime}</span>
               </div>
-              <div className="flex flex-col p-6">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                    {p.tag}
-                  </span>
-                  <span className="text-xs text-muted-foreground">{p.readTime}</span>
-                </div>
-                <h2 className="mt-5 text-lg font-semibold tracking-tight text-foreground group-hover:text-accent">
-                  {p.title}
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
-                <div className="mt-6 border-t border-border pt-4 text-xs text-muted-foreground">
-                  {new Date(p.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })}
-                </div>
+              <h2 className="mt-5 text-lg font-semibold tracking-tight text-foreground group-hover:text-accent">
+                {p.title}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
+              <div className="mt-6 border-t border-border pt-4 text-xs text-muted-foreground">
+                {new Date(p.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
               </div>
             </Link>
           ))}

@@ -14,6 +14,7 @@ export interface CaseStudy {
   impact: ImpactMetric[];
   stack: string[];
   liveUrl: string;
+  image: string;
 }
 
 export interface BlogPost {
@@ -23,7 +24,6 @@ export interface BlogPost {
   date: string;
   readTime: string;
   tag: string;
-  image: string;
   body: string[];
 }
 
