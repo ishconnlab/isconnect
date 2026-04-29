@@ -8,13 +8,15 @@ import { blogPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Blog — IshConnect | Software Development & Tech Training Insights",
-  description: "Read articles on software engineering, infrastructure, cloud solutions, tech training, and digital transformation from the IshConnect team in Rwanda.",
+  description:
+    "Read articles on software engineering, infrastructure, cloud solutions, tech training, and digital transformation from the IshConnect team in Rwanda.",
   alternates: {
     canonical: "https://ishconnect.vercel.app/blog",
   },
   openGraph: {
     title: "IshConnect Blog | Engineering & Tech Training Insights",
-    description: "Articles on software development, infrastructure, and tech education from IshConnect.",
+    description:
+      "Articles on software development, infrastructure, and tech education from IshConnect.",
     type: "website",
     url: "https://ishconnect.vercel.app/blog",
     images: [
