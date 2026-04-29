@@ -57,6 +57,7 @@ export default function HomePage() {
         <Team />
         <CTA />
       </main>
+      <div className="mb-20" />
       <ChatbotLazy />
     </>
   );

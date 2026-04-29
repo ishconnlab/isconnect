@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import { SectionHeader } from "./Section";
 import { caseStudies } from "@/lib/content";
 
@@ -18,16 +17,8 @@ export function Projects() {
             <article
               key={p.slug}
               className="group flex flex-col overflow-hidden rounded-xl border border-border bg-background card-lift"
-            >
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
-                <Image
-                  src={p.image}
-                  alt={p.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="flex flex-col p-6">
+             >
+               <div className="flex flex-col p-6">
                 <div className="flex items-center justify-between">
                   <span className="inline-flex items-center rounded-full border border-border bg-surface px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                     {p.category}
