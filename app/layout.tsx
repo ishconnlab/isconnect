@@ -9,8 +9,6 @@ export const viewport: Viewport = {
   themeColor: "#0f172a",
 };
 
-export const metadataBase = new URL("https://ishconnect.vercel.app");
-
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -28,9 +26,12 @@ const orgJsonLd = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ishconnect.vercel.app"), // ✅ MOVED HERE
+
   title: "IshConnect — Software Development & Tech Training in Rwanda",
   description:
     "IshConnect is Rwanda's leading software development and tech training company. Custom web apps, mobile apps, cybersecurity, cloud solutions, and IT training.",
+
   keywords: [
     "software development",
     "tech training",
@@ -42,6 +43,7 @@ export const metadata: Metadata = {
     "DevQueens",
     "Africa",
   ],
+
   robots: {
     index: true,
     follow: true,
@@ -53,32 +55,36 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   alternates: {
-    canonical: "https://ishconnect.vercel.app",
+    canonical: "/",
   },
+
   openGraph: {
     title: "IshConnect | Software Development & Tech Training in Rwanda",
     description:
       "Custom software solutions and world-class tech training from Rwanda. Web, mobile, cybersecurity, cloud, and talent development.",
     type: "website",
-    url: "https://ishconnect.vercel.app",
+    url: "/",
     siteName: "IshConnect",
     images: [
       {
-        url: "https://ishconnect.vercel.app/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "IshConnect - Software Development & Tech Training",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "IshConnect — Rwanda's Premier Tech Partner",
     description: "Software development, IT services, and tech education from Africa.",
-    images: ["https://ishconnect.vercel.app/og-image.png"],
+    images: ["/og-image.png"],
     creator: "@ishconnect",
   },
+
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
