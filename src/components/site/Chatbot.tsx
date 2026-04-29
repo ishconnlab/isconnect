@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, X, Send, CornerDownLeft } from "lucide-react";
+import { Bot, X, Send } from "lucide-react";
 
 type Msg = { role: "ai" | "user"; content: string };
 

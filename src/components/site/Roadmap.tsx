@@ -3,7 +3,7 @@ import { SectionHeader } from "./Section";
 const phases = [
   {
     tag: "2020",
-    title: "Foundation  Founded in Kigali",
+    title: "Founded in Kigali",
     period: "2020",
     points: [
       "IshConnect established to bridge the digital skills gap in Rwanda",
@@ -13,7 +13,7 @@ const phases = [
   },
   {
     tag: "2021",
-    title: "Education Launch   First Training Cohort",
+    title: "First Training Cohort",
     period: "2021",
     points: [
       "Launched first Python programming bootcamp",
@@ -23,7 +23,7 @@ const phases = [
   },
   {
     tag: "2022",
-    title: "Product & Services   Enterprise Solutions",
+    title: "Enterprise Solutions",
     period: "2022",
     points: [
       "Expanded into software development services",
@@ -33,17 +33,17 @@ const phases = [
   },
   {
     tag: "2023",
-    title: "Expansion   Regional Growth",
+    title: "Regional Growth",
     period: "2023",
     points: [
-      "Expanded to Uganda,south Africa and Kenya",
+      "Expanded to Uganda, South Africa and Kenya",
       "Enabled remote service delivery",
       "Built cross-border collaborations",
     ],
   },
   {
     tag: "2024",
-    title: "Specialization   Cybersecurity Division",
+    title: "Cybersecurity Division",
     period: "2024",
     points: [
       "Launched cybersecurity services and training",
@@ -53,7 +53,7 @@ const phases = [
   },
   {
     tag: "2025",
-    title: "Innovation   AI & Innovation Hub",
+    title: "AI & Innovation Hub",
     period: "2025",
     points: [
       "Opened AI research hub in Kigali",
@@ -63,8 +63,8 @@ const phases = [
   },
   {
     tag: "2026+",
-    title: "Scale   Pan-African Impact",
-    period: "2026 →",
+    title: "Pan-African Impact",
+    period: "2026 \u2192",
     points: [
       "Pan-African expansion strategy",
       "Train 1,000+ developers",
@@ -73,6 +73,7 @@ const phases = [
     ],
   },
 ];
+
 export function Roadmap() {
   return (
     <section id="roadmap" className="border-t border-border py-20 md:py-28">
@@ -80,7 +81,7 @@ export function Roadmap() {
         <SectionHeader
           eyebrow="Roadmap"
           title="Where we're going."
-          description="A transparent view of how IshConnect is building  from foundation to continent-scale delivery."
+          description="A transparent view of how IshConnect is building from foundation to continent-scale delivery."
         />
 
         <ol className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">

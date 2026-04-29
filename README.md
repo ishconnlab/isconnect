@@ -1,97 +1,75 @@
-# IshConnect Website
+# IshConnect
 
-Official website for **IshConnect** — a Rwanda-based software engineering company and tech academy building reliable, scalable digital solutions across Africa.
+IshConnect is a Rwandan engineering studio and academy building reliable digital products across Africa.
 
-## 🌍 About IshConnect
+## Tech Stack
 
-IshConnect is a technology company focused on:
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **UI Components:** shadcn/ui
+- **Animations:** Framer Motion
+- **Forms:** React Hook Form + Zod
+- **Deployment:** Vercel
 
-- Custom software development
-- Web and mobile applications
-- Cloud and backend systems
-- AI-powered solutions
-- Tech training and mentorship
+## Getting Started
 
-We partner with startups, businesses, and organizations to design and build high-impact digital products.
-
-## ✨ Website Features
-
-- ⚡ High-performance modern frontend
-- 📊 Real-world case studies with measurable impact
-- 🎯 SEO-optimized pages (Open Graph, structured data)
-- 🌗 Theme support (light/dark mode)
-- 🤖 Integrated AI chatbot
-- 📱 Fully responsive design
-- 🔗 Live project showcases
-
-## 🧱 Tech Stack
-
-- **Frontend:** React, TypeScript
-- **Routing:** TanStack Router
-- **Styling:** Tailwind CSS
-- **Build Tool:** Vite
-- **Hosting:** Vercel
-- **Data:** Static content (case studies, blog)
-
-## 📂 Project Structure
-
-```
-src/
- ├── components/     # Reusable UI components
- ├── routes/         # Application routes
- ├── assets/         # Images and media
- ├── lib/            # Static data (case studies, blog)
- └── styles.css      # Global styles
-```
-
-## 🚀 Getting Started
-
-### Install dependencies
-
-```
+```bash
+# Install dependencies
 npm install
-```
 
-### Run development server
-
-```
+# Run development server
 npm run dev
-```
 
-### Build for production
-
-```
+# Build for production
 npm run build
+
+# Start production server
+npm start
+
+# Lint
+npm run lint
+
+# Format
+npm run format
+
+# Type check
+npm run typecheck
 ```
 
-## 🌐 Live Website
+## Project Structure
 
-👉 https://ishconnect.vercel.app
+```
+/app                    Next.js App Router
+  /(routes)             Route definitions
+/components
+  /site                 Page-level components
+  /ui                   Reusable UI primitives (shadcn)
+/lib                    Utilities and data
+/hooks                  Custom React hooks
+/types                  TypeScript type definitions
+/styles                 Global styles
+/public                 Static assets
+```
 
-## 📊 Key Sections
+## Environment Variables
 
-- Home (Hero, Services, Metrics)
-- Projects & Case Studies
-- Academy & Training
-- Team & Company Info
-- Contact & CTA
+Copy `.env.example` to `.env.local` and fill in:
 
-## 🤝 Clients & Work
+- `EMAILJS_SERVICE_ID` - EmailJS service ID
+- `EMAILJS_TEMPLATE_ID` - EmailJS template ID
+- `EMAILJS_PUBLIC_KEY` - EmailJS public key
 
-We build solutions across:
+## Deployment
 
-- Climate Tech
-- Logistics & Operations
-- Healthcare AI
-- Consumer Apps
-- AgriTech Platforms
+Deploy to Vercel:
 
-## 📬 Contact
+```bash
+vercel
+```
 
-- Website: https://ishconnect.vercel.app
-- Email: [contact@ishconnect.rw](mailto:contact@ishconnect.rw)
-- GitHub: https://github.com/ishconnect
+Or connect your GitHub repo to Vercel for automatic deployments.
 
-## 📄 License
+## License
 
-This project is proprietary and maintained by IshConnect.
+All rights reserved. © IshConnect (IshConnLab)

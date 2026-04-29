@@ -1,14 +1,5 @@
-export interface CaseStudy {
-  slug: string;
-  title: string;
-  category: string;
-  tagline: string;
-  challenge: string;
-  solution: string;
-  impact: { label: string; value: string }[];
-  stack: string[];
-  liveUrl: string;
-}
+import type { BlogPost, CaseStudy } from "@/types";
+
 export const caseStudies: CaseStudy[] = [
   {
     slug: "greenafrica-dashboard",
@@ -113,15 +104,6 @@ export const caseStudies: CaseStudy[] = [
     liveUrl: "https://agrilink.rw",
   },
 ];
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  tag: string;
-  body: string[];
-}
 
 export const blogPosts: BlogPost[] = [
   {
@@ -167,3 +149,19 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
+  return caseStudies.find((cs) => cs.slug === slug);
+}
+
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  return blogPosts.find((bp) => bp.slug === slug);
+}
+
+export function getAllCaseStudySlugs(): string[] {
+  return caseStudies.map((cs) => cs.slug);
+}
+
+export function getAllBlogPostSlugs(): string[] {
+  return blogPosts.map((bp) => bp.slug);
+}

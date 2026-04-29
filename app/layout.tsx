@@ -1,37 +1,29 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import "./globals.css";
 import { ThemeProvider } from "@/components/site/ThemeProvider";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import "./globals.css";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0f172a",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f9fafb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
 };
 
-export const metadataBase = new URL("https://ishconnect.vercel.app");
-
-const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://ishconnect.vercel.app/#organization",
-  name: "IshConnect",
-  url: "https://ishconnect.vercel.app",
-  logo: "https://ishconnect.vercel.app/logo.png",
-  image: "https://ishconnect.vercel.app/og-image.png",
-  description:
-    "IshConnect is a Rwandan engineering studio and academy building reliable digital products across Africa.",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "RW",
-  },
-};
+const SITE_URL = "https://ishconnect.vercel.app";
 
 export const metadata: Metadata = {
-  title: "IshConnect — Software Development & Tech Training in Rwanda",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "IshConnect — Software Development & Tech Training in Rwanda",
+    template: "%s | IshConnect",
+  },
   description:
     "IshConnect is Rwanda's leading software development and tech training company. Custom web apps, mobile apps, cybersecurity, cloud solutions, and IT training.",
-
   keywords: [
     "software development",
     "tech training",
@@ -43,7 +35,6 @@ export const metadata: Metadata = {
     "DevQueens",
     "Africa",
   ],
-
   robots: {
     index: true,
     follow: true,
@@ -55,28 +46,26 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-
   alternates: {
     canonical: "/",
   },
-
   openGraph: {
-    title: "IshConnect | Software Development & Tech Training in Rwanda",
+    type: "website",
+    siteName: "IshConnect",
+    title: "IshConnect — Software Development & Tech Training in Rwanda",
     description:
       "Custom software solutions and world-class tech training from Rwanda. Web, mobile, cybersecurity, cloud, and talent development.",
-    type: "website",
-    url: "/",
-    siteName: "IshConnect",
+    url: SITE_URL,
+    locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "IshConnect - Software Development & Tech Training",
+        alt: "IshConnect — Software Development & Tech Training",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: "IshConnect — Rwanda's Premier Tech Partner",
@@ -84,18 +73,46 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
     creator: "@ishconnect",
   },
-
   icons: {
     icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon.png",
   },
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "IshConnect",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/og-image.png`,
+  description:
+    "IshConnect is a Rwandan engineering studio and academy building reliable digital products across Africa.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kigali",
+    addressCountry: "RW",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "ishconnlab@gmail.com",
+    telephone: "+250787377750",
+  },
+  sameAs: [] as string[],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className="antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="min-h-screen bg-background text-foreground">
+            <Nav />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VH0F5KGJ6B"
@@ -104,9 +121,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-VH0F5KGJ6B');`}
         </Script>
-        <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify(orgJsonLd)}
-        </Script>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
       </body>
     </html>
   );
